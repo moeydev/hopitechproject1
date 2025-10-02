@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Partners - Hospitech Associates Ltd.</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="icon" type="image/png" href="favicon-32x32.png">
+  <style>
+    /* Base Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    :root {
+      --primary: #1a5276;
+      --secondary: #3498db;
+      --accent: #e74c3c;
+      --light: #f5f7fa;
+      --dark: #2c3e50;
+      --text: #333333;
+      --text-light: #666666;
+    }
+
+    body {
+      background-color: #f9f9f9;
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Header Styles */
+    header {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white;
+      padding: 20px 0;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .header-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+    }
+
+    .site-logo {
+      width: 80px;
+      height: 80px;
+      border-radius: 8px;
+      background-color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 15px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    .site-logo i {
+      font-size: 40px;
+      color: var(--primary);
+    }
+
+    .header-text h1 {
+      font-size: 28px;
+      margin-bottom: 5px;
+      font-weight: 700;
+    }
+
+    .subtitle {
+      font-size: 16px;
+      opacity: 0.9;
+      font-weight: 300;
+    }
+
+    /* Navigation Styles */
+    nav {
+      background-color: white;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 20px;
+    }
+
+    .nav-links {
+      display: flex;
+    }
+
+    .nav-links a {
+      color: var(--dark);
+      text-decoration: none;
+      padding: 18px 20px;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+
+    .nav-links a.active {
+      color: var(--primary);
+    }
+
+    .nav-links a.active::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background-color: var(--primary);
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    /* Page Header */
+    .page-header {
+      background: linear-gradient(rgba(26, 82, 118, 0.9), rgba(52, 152, 219, 0.9)), url('https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      padding: 80px 0;
+      text-align: center;
+    }
+
+    .page-header h1 {
+      font-size: 42px;
+      margin-bottom: 20px;
+      font-weight: 700;
+    }
+
+    .page-header p {
+      font-size: 20px;
+      max-width: 700px;
+      margin: 0 auto;
+      opacity: 0.9;
+    }
+
+    /* Content Sections */
+    section {
+      padding: 60px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .section-title h2 {
+      font-size: 32px;
+      color: var(--primary);
+      margin-bottom: 15px;
+      position: relative;
+      display: inline-block;
+    }
+
+    .section-title h2::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 3px;
+      background-color: var(--accent);
+    }
+
+    .section-title p {
+      color: var(--text-light);
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .content-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .content-card {
+      background-color: white;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s ease;
+    }
+
+    .content-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card-icon {
+      background-color: var(--primary);
+      color: white;
+      padding: 20px;
+      text-align: center;
+      font-size: 40px;
+    }
+
+    .card-content {
+      padding: 25px;
+    }
+
+    .card-content h3 {
+      font-size: 22px;
+      margin-bottom: 15px;
+      color: var(--primary);
+    }
+
+    .card-content p {
+      color: var(--text-light);
+      margin-bottom: 15px;
+    }
+
+    .btn {
+      display: inline-block;
+      background-color: var(--accent);
+      color: white;
+      padding: 12px 30px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background-color: #c0392b;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Partners Section */
+    .partners {
+      background-color: var(--light);
+    }
+
+    .partner-logos {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .partner-logo {
+      background-color: white;
+      width: 200px;
+      height: 120px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 8px;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+      padding: 20px;
+      transition: transform 0.3s ease;
+    }
+
+    .partner-logo:hover {
+      transform: translateY(-5px);
+    }
+
+    .partner-logo i {
+      font-size: 50px;
+      color: var(--primary);
+    }
+
+    .partner-info {
+      text-align: center;
+      margin-top: 15px;
+    }
+
+    .partner-info h3 {
+      font-size: 18px;
+      color: var(--primary);
+      margin-bottom: 5px;
+    }
+
+    .partner-info p {
+      color: var(--text-light);
+      font-size: 14px;
+    }
+
+    /* Partnership Benefits */
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .benefit-item {
+      text-align: center;
+      padding: 30px;
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    }
+
+    .benefit-item h3 {
+      font-size: 22px;
+      color: var(--primary);
+      margin-bottom: 15px;
+    }
+
+    .benefit-item p {
+      color: var(--text-light);
+    }
+
+    /* Footer */
+    footer {
+      background-color: var(--dark);
+      color: white;
+      padding: 40px 0 20px;
+    }
+
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      margin-bottom: 30px;
+    }
+
+    .footer-section h3 {
+      font-size: 20px;
+      margin-bottom: 20px;
+      position: relative;
+      padding-bottom: 10px;
+    }
+
+    .footer-section h3::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 50px;
+      height: 2px;
+      background-color: var(--accent);
+    }
+
+    .footer-section p, .footer-section a {
+      color: #bbb;
+      margin-bottom: 10px;
+      display: block;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .footer-section a:hover {
+      color: white;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .social-links a {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background-color: rgba(255, 255, 255, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+    }
+
+    .social-links a:hover {
+      background-color: var(--accent);
+      transform: translateY(-3px);
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      color: #bbb;
+      font-size: 14px;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .header-container {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .logo-container {
+        margin-bottom: 15px;
+        justify-content: center;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: white;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .nav-links a {
+        padding: 15px 20px;
+        border-bottom: 1px solid #eee;
+      }
+
+      .page-header h1 {
+        font-size: 32px;
+      }
+
+      .page-header p {
+        font-size: 18px;
+      }
+
+      .partner-logos {
+        flex-direction: column;
+      }
+
+      .partner-logo {
+        width: 100%;
+        max-width: 250px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container header-container">
+      <div class="logo-container">
+        <div class="site-logo">
+          <i class="fas fa-hospital-alt"></i>
+        </div>
+        <div class="header-text">
+          <h1>Hospitech Associates Ltd.</h1>
+          <p class="subtitle">Determined by Quality for Everyone</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <nav>
+    <div class="container nav-container">
+      <span class="menu-toggle" id="menuToggle">☰</span>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="products.html">Products</a>
+        <a href="partners.html" class="active">Partners</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="page-header">
+    <div class="container">
+      <h1>Our Global Partners</h1>
+      <p>Collaborating with world-leading medical technology manufacturers to bring you the best solutions</p>
+    </div>
+  </section>
+
+  <section class="partners">
+    <div class="container">
+      <div class="section-title">
+        <h2>Strategic Partnerships</h2>
+        <p>We partner with industry leaders to provide cutting-edge medical technology and solutions</p>
+      </div>
+      
+      <div class="partner-logos">
+        <div class="partner-item">
+          <div class="partner-logo">
+            <i class="fas fa-flask"></i>
+          </div>
+          <div class="partner-info">
+            <h3>Neo Medica</h3>
+            <p>Diagnostic Imaging</p>
+          </div>
+        </div>
+        <div class="partner-item">
+          <div class="partner-logo">
+            <i class="fas fa-heartbeat"></i>
+          </div>
+          <div class="partner-info">
+            <h3>Rapid Labs</h3>
+            <p>Laboratory Equipment</p>
+          </div>
+        </div>
+        <div class="partner-item">
+          <div class="partner-logo">
+            <i class="fas fa-stethoscope"></i>
+          </div>
+          <div class="partner-info">
+            <h3>MediTech Global</h3>
+            <p>Patient Monitoring</p>
+          </div>
+        </div>
+        <div class="partner-item">
+          <div class="partner-logo">
+            <i class="fas fa-prescription-bottle"></i>
+          </div>
+          <div class="partner-info">
+            <h3>BioCare Systems</h3>
+            <p>Therapeutic Equipment</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="benefits">
+    <div class="container">
+      <div class="section-title">
+        <h2>Partnership Benefits</h2>
+        <p>Our strategic alliances deliver significant advantages to healthcare providers across Bangladesh</p>
+      </div>
+      <div class="benefits-grid">
+        <div class="benefit-item">
+          <div class="card-icon">
+            <i class="fas fa-shield-alt"></i>
+          </div>
+          <h3>Quality Assurance</h3>
+          <p>All products meet international quality standards and regulatory requirements</p>
+        </div>
+        <div class="benefit-item">
+          <div class="card-icon">
+            <i class="fas fa-tools"></i>
+          </div>
+          <h3>Technical Support</h3>
+          <p>Comprehensive technical support and maintenance services from certified engineers</p>
+        </div>
+        <div class="benefit-item">
+          <div class="card-icon">
+            <i class="fas fa-graduation-cap"></i>
+          </div>
+          <h3>Training Programs</h3>
+          <p>Regular training sessions for healthcare professionals on equipment operation</p>
+        </div>
+        <div class="benefit-item">
+          <div class="card-icon">
+            <i class="fas fa-truck"></i>
+          </div>
+          <h3>Supply Chain</h3>
+          <p>Efficient supply chain ensuring timely delivery of equipment and spare parts</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="partnership-types">
+    <div class="container">
+      <div class="section-title">
+        <h2>Types of Partnerships</h2>
+        <p>We offer various partnership models to suit different healthcare institution needs</p>
+      </div>
+      <div class="content-grid">
+        <div class="content-card">
+          <div class="card-icon">
+            <i class="fas fa-handshake"></i>
+          </div>
+          <div class="card-content">
+            <h3>Distribution Partnerships</h3>
+            <p>Exclusive distribution rights for leading medical equipment brands in Bangladesh</p>
+            <a href="contact.html" class="btn">Learn More</a>
+          </div>
+        </div>
+        <div class="content-card">
+          <div class="card-icon">
+            <i class="fas fa-clinic-medical"></i>
+          </div>
+          <div class="card-content">
+            <h3>Hospital Collaborations</h3>
+            <p>Strategic partnerships with hospitals for equipment supply and maintenance</p>
+            <a href="contact.html" class="btn">Learn More</a>
+          </div>
+        </div>
+        <div class="content-card">
+          <div class="card-icon">
+            <i class="fas fa-university"></i>
+          </div>
+          <div class="card-content">
+            <h3>Research Institutions</h3>
+            <p>Collaboration with research centers for advanced medical technology development</p>
+            <a href="contact.html" class="btn">Learn More</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-partners">
+    <div class="container">
+      <div class="section-title">
+        <h2>Become Our Partner</h2>
+        <p>Join our network of healthcare providers and benefit from our strategic partnerships</p>
+      </div>
+      <div style="text-align: center;">
+        <a href="contact.html" class="btn">Contact Us for Partnership</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Hospitech Associates Ltd.</h3>
+          <p>Determined by Quality for Everyone</p>
+          <p>Providing advanced medical solutions since 2012.</p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <a href="index.html">Home</a>
+          <a href="about.html">About Us</a>
+          <a href="products.html">Products</a>
+          <a href="partners.html">Partners</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div class="footer-section">
+          <h3>Contact Us</h3>
+          <p><i class="fas fa-map-marker-alt"></i> 123 Medical Road, Dhaka, Bangladesh</p>
+          <p><i class="fas fa-phone"></i> +880 1234 567890</p>
+          <p><i class="fas fa-envelope"></i> info@hospitech.com</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Hospitech Associates Ltd. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    document.getElementById('menuToggle').addEventListener('click', function() {
+      document.getElementById('navLinks').classList.toggle('active');
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', function(event) {
+      const navLinks = document.getElementById('navLinks');
+      const menuToggle = document.getElementById('menuToggle');
+      
+      if (!navLinks.contains(event.target) && !menuToggle.contains(event.target)) {
+        navLinks.classList.remove('active');
+      }
+    });
+  </script>
+</body>
+</html>
