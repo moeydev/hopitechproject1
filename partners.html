@@ -258,82 +258,91 @@
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     }
 
+    .btn-outline {
+      background-color: transparent;
+      border: 2px solid var(--primary);
+      color: var(--primary);
+    }
+
+    .btn-outline:hover {
+      background-color: var(--primary);
+      color: white;
+    }
+
     /* Partners Section */
     .partners {
       background-color: var(--light);
     }
 
-    .partner-logos {
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-      flex-wrap: wrap;
+    .partner-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 30px;
       margin-top: 40px;
     }
 
-    .partner-logo {
+    .partner-card {
       background-color: white;
-      width: 200px;
-      height: 120px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
       border-radius: 8px;
-      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
-      padding: 20px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
       transition: transform 0.3s ease;
     }
 
-    .partner-logo:hover {
+    .partner-card:hover {
       transform: translateY(-5px);
     }
 
-    .partner-logo i {
-      font-size: 50px;
-      color: var(--primary);
-    }
-
-    .partner-info {
+    .partner-header {
+      background-color: var(--primary);
+      color: white;
+      padding: 25px;
       text-align: center;
-      margin-top: 15px;
     }
 
-    .partner-info h3 {
-      font-size: 18px;
-      color: var(--primary);
-      margin-bottom: 5px;
+    .partner-header h3 {
+      font-size: 24px;
+      margin-bottom: 10px;
     }
 
-    .partner-info p {
-      color: var(--text-light);
+    .partner-header a {
+      color: white;
+      text-decoration: none;
       font-size: 14px;
+      opacity: 0.9;
     }
 
-    /* Partnership Benefits */
-    .benefits-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 30px;
-      margin-top: 40px;
+    .partner-header a:hover {
+      text-decoration: underline;
     }
 
-    .benefit-item {
-      text-align: center;
-      padding: 30px;
-      background-color: white;
-      border-radius: 8px;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    .partner-products {
+      padding: 25px;
     }
 
-    .benefit-item h3 {
-      font-size: 22px;
-      color: var(--primary);
-      margin-bottom: 15px;
+    .product-list {
+      list-style: none;
+      margin-bottom: 20px;
     }
 
-    .benefit-item p {
+    .product-list li {
+      padding: 10px 0;
+      border-bottom: 1px solid #eee;
       color: var(--text-light);
+      position: relative;
+      padding-left: 25px;
+    }
+
+    .product-list li:last-child {
+      border-bottom: none;
+    }
+
+    .product-list li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-weight: bold;
     }
 
     /* Footer */
@@ -453,13 +462,8 @@
         font-size: 18px;
       }
 
-      .partner-logos {
-        flex-direction: column;
-      }
-
-      .partner-logo {
-        width: 100%;
-        max-width: 250px;
+      .partner-grid {
+        grid-template-columns: 1fr;
       }
     }
   </style>
@@ -506,41 +510,76 @@
         <p>We partner with industry leaders to provide cutting-edge medical technology and solutions</p>
       </div>
       
-      <div class="partner-logos">
-        <div class="partner-item">
-          <div class="partner-logo">
-            <i class="fas fa-flask"></i>
+      <div class="partner-grid">
+        <!-- Neo Medica -->
+        <div class="partner-card">
+          <div class="partner-header">
+            <h3>NEO Medica</h3>
+            <a href="https://neomedica.rs/" target="_blank">neomedica.rs</a>
           </div>
-          <div class="partner-info">
-            <h3>Neo Medica</h3>
-            <p>Diagnostic Imaging</p>
+          <div class="partner-products">
+            <h4>Products We Import:</h4>
+            <ul class="product-list">
+              <li>Fully Automated 3/5 diff Hematology Analyzer</li>
+              <li>Fully Automated Urine Sediment Analyzer</li>
+              <li>Urine Chemistry Analyzer</li>
+              <li>Urine Molecular System</li>
+            </ul>
+            <a href="contact.html?product=NEO Medica Products" class="btn">Request Quote</a>
           </div>
         </div>
-        <div class="partner-item">
-          <div class="partner-logo">
-            <i class="fas fa-heartbeat"></i>
-          </div>
-          <div class="partner-info">
+
+        <!-- Rapid Labs -->
+        <div class="partner-card">
+          <div class="partner-header">
             <h3>Rapid Labs</h3>
-            <p>Laboratory Equipment</p>
+            <a href="https://www.rapidlabs.co.uk/" target="_blank">rapidlabs.co.uk</a>
+          </div>
+          <div class="partner-products">
+            <h4>Products We Import:</h4>
+            <ul class="product-list">
+              <li>Blood Grouping Systems</li>
+              <li>Febrile Antigen Testing</li>
+              <li>Serology Latex Kits</li>
+              <li>ELISA & ICT Devices</li>
+            </ul>
+            <a href="contact.html?product=Rapid Labs Products" class="btn">Request Quote</a>
           </div>
         </div>
-        <div class="partner-item">
-          <div class="partner-logo">
-            <i class="fas fa-stethoscope"></i>
+
+        <!-- FAR Diagnostics -->
+        <div class="partner-card">
+          <div class="partner-header">
+            <h3>FAR Diagnostics</h3>
+            <a href="https://www.fardiag.com/en/" target="_blank">fardiag.com</a>
           </div>
-          <div class="partner-info">
-            <h3>MediTech Global</h3>
-            <p>Patient Monitoring</p>
+          <div class="partner-products">
+            <h4>Products We Import:</h4>
+            <ul class="product-list">
+              <li>Biochemistry Reagents</li>
+              <li>Serology Reagents</li>
+              <li>Biochemistry Analyzers</li>
+              <li>Laboratory Testing Systems</li>
+            </ul>
+            <a href="contact.html?product=FAR Diagnostics Products" class="btn">Request Quote</a>
           </div>
         </div>
-        <div class="partner-item">
-          <div class="partner-logo">
-            <i class="fas fa-prescription-bottle"></i>
+
+        <!-- RAL Spain -->
+        <div class="partner-card">
+          <div class="partner-header">
+            <h3>RAL (Spain)</h3>
+            <a href="https://ral-sa.com/" target="_blank">ral-sa.com</a>
           </div>
-          <div class="partner-info">
-            <h3>BioCare Systems</h3>
-            <p>Therapeutic Equipment</p>
+          <div class="partner-products">
+            <h4>Products We Import:</h4>
+            <ul class="product-list">
+              <li>Biochemistry Analyzers</li>
+              <li>ESR Analyzers</li>
+              <li>Coagulation Analyzers</li>
+              <li>Specialized Diagnostic Systems</li>
+            </ul>
+            <a href="contact.html?product=RAL Products" class="btn">Request Quote</a>
           </div>
         </div>
       </div>
@@ -550,77 +589,35 @@
   <section class="benefits">
     <div class="container">
       <div class="section-title">
-        <h2>Partnership Benefits</h2>
+        <h2>Why Choose Our Partner Products</h2>
         <p>Our strategic alliances deliver significant advantages to healthcare providers across Bangladesh</p>
-      </div>
-      <div class="benefits-grid">
-        <div class="benefit-item">
-          <div class="card-icon">
-            <i class="fas fa-shield-alt"></i>
-          </div>
-          <h3>Quality Assurance</h3>
-          <p>All products meet international quality standards and regulatory requirements</p>
-        </div>
-        <div class="benefit-item">
-          <div class="card-icon">
-            <i class="fas fa-tools"></i>
-          </div>
-          <h3>Technical Support</h3>
-          <p>Comprehensive technical support and maintenance services from certified engineers</p>
-        </div>
-        <div class="benefit-item">
-          <div class="card-icon">
-            <i class="fas fa-graduation-cap"></i>
-          </div>
-          <h3>Training Programs</h3>
-          <p>Regular training sessions for healthcare professionals on equipment operation</p>
-        </div>
-        <div class="benefit-item">
-          <div class="card-icon">
-            <i class="fas fa-truck"></i>
-          </div>
-          <h3>Supply Chain</h3>
-          <p>Efficient supply chain ensuring timely delivery of equipment and spare parts</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="partnership-types">
-    <div class="container">
-      <div class="section-title">
-        <h2>Types of Partnerships</h2>
-        <p>We offer various partnership models to suit different healthcare institution needs</p>
       </div>
       <div class="content-grid">
         <div class="content-card">
           <div class="card-icon">
-            <i class="fas fa-handshake"></i>
+            <i class="fas fa-shield-alt"></i>
           </div>
           <div class="card-content">
-            <h3>Distribution Partnerships</h3>
-            <p>Exclusive distribution rights for leading medical equipment brands in Bangladesh</p>
-            <a href="contact.html" class="btn">Learn More</a>
+            <h3>Quality Assurance</h3>
+            <p>All products meet international quality standards and regulatory requirements from certified manufacturers.</p>
           </div>
         </div>
         <div class="content-card">
           <div class="card-icon">
-            <i class="fas fa-clinic-medical"></i>
+            <i class="fas fa-tools"></i>
           </div>
           <div class="card-content">
-            <h3>Hospital Collaborations</h3>
-            <p>Strategic partnerships with hospitals for equipment supply and maintenance</p>
-            <a href="contact.html" class="btn">Learn More</a>
+            <h3>Technical Support</h3>
+            <p>Comprehensive technical support and maintenance services from certified engineers with manufacturer training.</p>
           </div>
         </div>
         <div class="content-card">
           <div class="card-icon">
-            <i class="fas fa-university"></i>
+            <i class="fas fa-graduation-cap"></i>
           </div>
           <div class="card-content">
-            <h3>Research Institutions</h3>
-            <p>Collaboration with research centers for advanced medical technology development</p>
-            <a href="contact.html" class="btn">Learn More</a>
+            <h3>Training Programs</h3>
+            <p>Regular training sessions for healthcare professionals on equipment operation and maintenance.</p>
           </div>
         </div>
       </div>
@@ -630,11 +627,11 @@
   <section class="cta-partners">
     <div class="container">
       <div class="section-title">
-        <h2>Become Our Partner</h2>
-        <p>Join our network of healthcare providers and benefit from our strategic partnerships</p>
+        <h2>Interested in Our Partner Products?</h2>
+        <p>Contact us for pricing, specifications, and technical details</p>
       </div>
       <div style="text-align: center;">
-        <a href="contact.html" class="btn">Contact Us for Partnership</a>
+        <a href="contact.html" class="btn">Contact Us for Product Information</a>
       </div>
     </div>
   </section>
@@ -688,6 +685,16 @@
       if (!navLinks.contains(event.target) && !menuToggle.contains(event.target)) {
         navLinks.classList.remove('active');
       }
+    });
+
+    // Product inquiry tracking
+    document.querySelectorAll('.btn').forEach(button => {
+      button.addEventListener('click', function(e) {
+        if (this.href.includes('contact.html')) {
+          const productType = this.textContent.includes('Quote') ? 'Quote Request' : 'Product Inquiry';
+          console.log(`${productType} from Partners page`);
+        }
+      });
     });
   </script>
 </body>
