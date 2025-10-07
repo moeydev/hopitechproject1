@@ -197,6 +197,126 @@
       margin: 0 auto;
     }
 
+    .btn {
+      display: inline-block;
+      background-color: var(--accent);
+      color: white;
+      padding: 12px 30px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background-color: #c0392b;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .btn-small {
+      padding: 8px 20px;
+      font-size: 14px;
+    }
+
+    /* Partner Categories */
+    .partner-category {
+      margin-bottom: 60px;
+    }
+
+    .category-header {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white;
+      padding: 30px;
+      border-radius: 8px 8px 0 0;
+      margin-bottom: 0;
+    }
+
+    .category-header h3 {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    .category-header a {
+      color: white;
+      text-decoration: none;
+      opacity: 0.9;
+      font-size: 16px;
+    }
+
+    .category-header a:hover {
+      text-decoration: underline;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 0;
+      background-color: white;
+      border-radius: 0 0 8px 8px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    }
+
+    .product-card {
+      padding: 30px;
+      border-right: 1px solid #eee;
+      border-bottom: 1px solid #eee;
+      transition: background-color 0.3s ease;
+    }
+
+    .product-card:hover {
+      background-color: var(--light);
+    }
+
+    .product-card:nth-child(3n) {
+      border-right: none;
+    }
+
+    .product-card:last-child {
+      border-right: none;
+    }
+
+    .product-card h4 {
+      font-size: 20px;
+      color: var(--primary);
+      margin-bottom: 15px;
+    }
+
+    .product-card p {
+      color: var(--text-light);
+      margin-bottom: 20px;
+      font-size: 14px;
+    }
+
+    .product-features {
+      list-style: none;
+      margin-bottom: 20px;
+    }
+
+    .product-features li {
+      padding: 5px 0;
+      color: var(--text-light);
+      font-size: 14px;
+      position: relative;
+      padding-left: 20px;
+    }
+
+    .product-features li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-weight: bold;
+    }
+
+    /* Services Section */
+    .services {
+      background-color: var(--light);
+    }
+
     .content-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -237,124 +357,6 @@
     .card-content p {
       color: var(--text-light);
       margin-bottom: 15px;
-    }
-
-    .btn {
-      display: inline-block;
-      background-color: var(--accent);
-      color: white;
-      padding: 12px 30px;
-      border-radius: 30px;
-      text-decoration: none;
-      font-weight: 600;
-      transition: all 0.3s ease;
-      border: none;
-      cursor: pointer;
-    }
-
-    .btn:hover {
-      background-color: #c0392b;
-      transform: translateY(-2px);
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    }
-
-    /* Product Categories */
-    .categories {
-      background-color: var(--light);
-    }
-
-    .category-filters {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 15px;
-      margin-bottom: 40px;
-    }
-
-    .filter-btn {
-      padding: 10px 25px;
-      background-color: white;
-      border: 2px solid var(--primary);
-      color: var(--primary);
-      border-radius: 30px;
-      cursor: pointer;
-      font-weight: 600;
-      transition: all 0.3s ease;
-    }
-
-    .filter-btn.active, .filter-btn:hover {
-      background-color: var(--primary);
-      color: white;
-    }
-
-    .product-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 30px;
-    }
-
-    .product-card {
-      background-color: white;
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-      transition: all 0.3s ease;
-    }
-
-    .product-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-    }
-
-    .product-image {
-      height: 200px;
-      background-color: #f8f9fa;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-    }
-
-    .product-image i {
-      font-size: 80px;
-      color: var(--primary);
-    }
-
-    .product-info {
-      padding: 25px;
-    }
-
-    .product-info h3 {
-      font-size: 20px;
-      color: var(--primary);
-      margin-bottom: 10px;
-    }
-
-    .product-info p {
-      color: var(--text-light);
-      margin-bottom: 15px;
-      font-size: 14px;
-    }
-
-    .product-features {
-      list-style: none;
-      margin-bottom: 20px;
-    }
-
-    .product-features li {
-      padding: 5px 0;
-      color: var(--text-light);
-      font-size: 14px;
-      position: relative;
-      padding-left: 20px;
-    }
-
-    .product-features li::before {
-      content: '✓';
-      position: absolute;
-      left: 0;
-      color: var(--accent);
-      font-weight: bold;
     }
 
     /* Footer */
@@ -474,14 +476,17 @@
         font-size: 18px;
       }
 
-      .category-filters {
-        flex-direction: column;
-        align-items: center;
+      .product-grid {
+        grid-template-columns: 1fr;
       }
 
-      .filter-btn {
-        width: 200px;
-        text-align: center;
+      .product-card {
+        border-right: none;
+        border-bottom: 1px solid #eee;
+      }
+
+      .product-card:last-child {
+        border-bottom: none;
       }
     }
   </style>
@@ -517,125 +522,192 @@
   <section class="page-header">
     <div class="container">
       <h1>Our Medical Products</h1>
-      <p>Discover our comprehensive range of high-quality medical equipment and solutions</p>
+      <p>Discover our comprehensive range of high-quality medical equipment and solutions from trusted global partners</p>
     </div>
   </section>
 
-  <section class="categories">
+  <!-- NEO Medica Products -->
+  <section class="partner-products" id="neo-medica">
     <div class="container">
-      <div class="section-title">
-        <h2>Product Categories</h2>
-        <p>Explore our diverse range of medical equipment designed to meet various healthcare needs</p>
+      <div class="partner-category">
+        <div class="category-header">
+          <h3>NEO Medica Products</h3>
+          <a href="https://neomedica.rs/" target="_blank">Visit: neomedica.rs</a>
+        </div>
+        <div class="product-grid">
+          <div class="product-card">
+            <h4>Fully Automated 3/5 diff Hematology Analyzer</h4>
+            <p>Advanced hematology analysis system with 3-part and 5-part differential capabilities for comprehensive blood testing.</p>
+            <ul class="product-features">
+              <li>3-part & 5-part differential</li>
+              <li>High throughput analysis</li>
+              <li>Automated sample handling</li>
+              <li>Quality control integration</li>
+            </ul>
+            <a href="contact.html?product=NEO Medica Hematology Analyzer" class="btn btn-small">Request Quote</a>
+          </div>
+          <div class="product-card">
+            <h4>Fully Automated Urine Sediment Analyzer</h4>
+            <p>Complete urine analysis system for automated sediment examination and microscopic analysis.</p>
+            <ul class="product-features">
+              <li>Automated sediment analysis</li>
+              <li>Digital microscopy</li>
+              <li>High-resolution imaging</li>
+              <li>Comprehensive reporting</li>
+            </ul>
+            <a href="contact.html?product=NEO Medica Urine Sediment Analyzer" class="btn btn-small">Request Quote</a>
+          </div>
+          <div class="product-card">
+            <h4>Urine Chemistry Analyzer</h4>
+            <p>Advanced urine chemistry testing system for rapid and accurate urinalysis results.</p>
+            <ul class="product-features">
+              <li>Multi-parameter testing</li>
+              <li>Rapid results</li>
+              <li>Easy operation</li>
+              <li>Compact design</li>
+            </ul>
+            <a href="contact.html?product=NEO Medica Urine Chemistry Analyzer" class="btn btn-small">Request Quote</a>
+          </div>
+        </div>
       </div>
-      
-      <div class="category-filters">
-        <button class="filter-btn active" data-filter="all">All Products</button>
-        <button class="filter-btn" data-filter="diagnostic">Diagnostic Equipment</button>
-        <button class="filter-btn" data-filter="therapeutic">Therapeutic Equipment</button>
-        <button class="filter-btn" data-filter="monitoring">Patient Monitoring</button>
-        <button class="filter-btn" data-filter="lab">Laboratory Equipment</button>
+    </div>
+  </section>
+
+  <!-- Rapid Labs Products -->
+  <section class="partner-products" id="rapid-labs" style="background-color: var(--light);">
+    <div class="container">
+      <div class="partner-category">
+        <div class="category-header">
+          <h3>Rapid Labs Products</h3>
+          <a href="https://www.rapidlabs.co.uk/" target="_blank">Visit: rapidlabs.co.uk</a>
+        </div>
+        <div class="product-grid">
+          <div class="product-card">
+            <h4>Blood Grouping Systems</h4>
+            <p>Comprehensive blood typing and grouping systems for safe transfusion medicine.</p>
+            <ul class="product-features">
+              <li>ABO & Rh typing</li>
+              <li>Antibody screening</li>
+              <li>Cross-matching</li>
+              <li>Automated processing</li>
+            </ul>
+            <a href="contact.html?product=Rapid Labs Blood Grouping" class="btn btn-small">Request Quote</a>
+          </div>
+          <div class="product-card">
+            <h4>Febrile Antigen Testing</h4>
+            <p>Rapid diagnostic tests for febrile illnesses including typhoid, malaria, and dengue.</p>
+            <ul class="product-features">
+              <li>Rapid results</li>
+              <li>High sensitivity</li>
+              <li>Multiple pathogen detection</li>
+              <li>Easy interpretation</li>
+            </ul>
+            <a href="contact.html?product=Rapid Labs Febrile Antigen" class="btn btn-small">Request Quote</a>
+          </div>
+          <div class="product-card">
+            <h4>ELISA & ICT Devices</h4>
+            <p>Immunoassay systems for various diagnostic applications including infectious diseases.</p>
+            <ul class="product-features">
+              <li>Enzyme-linked immunosorbent assay</li>
+              <li>Immunochromatographic tests</li>
+              <li>Quantitative & qualitative</li>
+              <li>Automated readers</li>
+            </ul>
+            <a href="contact.html?product=Rapid Labs ELISA ICT" class="btn btn-small">Request Quote</a>
+          </div>
+        </div>
       </div>
+    </div>
+  </section>
 
-      <div class="product-grid">
-        <div class="product-card" data-category="diagnostic">
-          <div class="product-image">
-            <i class="fas fa-heartbeat"></i>
-          </div>
-          <div class="product-info">
-            <h3>ECG Machines</h3>
-            <p>Advanced electrocardiogram machines for accurate cardiac diagnosis</p>
+  <!-- FAR Diagnostics Products -->
+  <section class="partner-products" id="far-diagnostics">
+    <div class="container">
+      <div class="partner-category">
+        <div class="category-header">
+          <h3>FAR Diagnostics Products</h3>
+          <a href="https://www.fardiag.com/en/" target="_blank">Visit: fardiag.com</a>
+        </div>
+        <div class="product-grid">
+          <div class="product-card">
+            <h4>Biochemistry Reagents</h4>
+            <p>Comprehensive range of biochemistry reagents for clinical laboratory testing.</p>
             <ul class="product-features">
-              <li>12-lead configuration</li>
-              <li>Digital signal processing</li>
-              <li>Portable and stationary models</li>
-              <li>Built-in analysis software</li>
+              <li>Liver function tests</li>
+              <li>Renal function panels</li>
+              <li>Cardiac markers</li>
+              <li>Diabetes monitoring</li>
             </ul>
-            <a href="contact.html" class="btn">Request Quote</a>
+            <a href="contact.html?product=FAR Biochemistry Reagents" class="btn btn-small">Request Quote</a>
+          </div>
+          <div class="product-card">
+            <h4>Serology Reagents</h4>
+            <p>Specialized serological testing reagents for infectious disease diagnosis.</p>
+            <ul class="product-features">
+              <li>Viral serology</li>
+              <li>Autoimmune testing</li>
+              <li>Allergy testing</li>
+              <li>Quality controlled</li>
+            </ul>
+            <a href="contact.html?product=FAR Serology Reagents" class="btn btn-small">Request Quote</a>
+          </div>
+          <div class="product-card">
+            <h4>Biochemistry Analyzers</h4>
+            <p>Automated biochemistry analyzers for efficient laboratory testing.</p>
+            <ul class="product-features">
+              <li>Fully automated</li>
+              <li>Random access</li>
+              <li>Multiple test panels</li>
+              <li>User-friendly interface</li>
+            </ul>
+            <a href="contact.html?product=FAR Biochemistry Analyzers" class="btn btn-small">Request Quote</a>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
 
-        <div class="product-card" data-category="diagnostic">
-          <div class="product-image">
-            <i class="fas fa-lungs"></i>
-          </div>
-          <div class="product-info">
-            <h3>Ultrasound Systems</h3>
-            <p>High-resolution ultrasound imaging for various medical applications</p>
-            <ul class="product-features">
-              <li>Color Doppler imaging</li>
-              <li>Multiple probe options</li>
-              <li>3D/4D capability</li>
-              <li>Portable and cart-based systems</li>
-            </ul>
-            <a href="contact.html" class="btn">Request Quote</a>
-          </div>
+  <!-- RAL Spain Products -->
+  <section class="partner-products" id="ral-spain" style="background-color: var(--light);">
+    <div class="container">
+      <div class="partner-category">
+        <div class="category-header">
+          <h3>RAL Spain Products</h3>
+          <a href="https://ral-sa.com/" target="_blank">Visit: ral-sa.com</a>
         </div>
-
-        <div class="product-card" data-category="therapeutic">
-          <div class="product-image">
-            <i class="fas fa-procedures"></i>
-          </div>
-          <div class="product-info">
-            <h3>Ventilators</h3>
-            <p>Advanced critical care ventilators for intensive care units</p>
+        <div class="product-grid">
+          <div class="product-card">
+            <h4>Biochemistry Analyzers</h4>
+            <p>Advanced biochemistry analysis systems for clinical laboratory applications.</p>
             <ul class="product-features">
-              <li>Multiple ventilation modes</li>
-              <li>Integrated monitoring</li>
-              <li>Emergency power backup</li>
-              <li>Touchscreen interface</li>
+              <li>Comprehensive test menu</li>
+              <li>High precision</li>
+              <li>Low maintenance</li>
+              <li>Compact design</li>
             </ul>
-            <a href="contact.html" class="btn">Request Quote</a>
+            <a href="contact.html?product=RAL Biochemistry Analyzers" class="btn btn-small">Request Quote</a>
           </div>
-        </div>
-
-        <div class="product-card" data-category="monitoring">
-          <div class="product-image">
-            <i class="fas fa-heart"></i>
-          </div>
-          <div class="product-info">
-            <h3>Patient Monitors</h3>
-            <p>Comprehensive patient monitoring systems for various care settings</p>
+          <div class="product-card">
+            <h4>ESR Analyzers</h4>
+            <p>Automated erythrocyte sedimentation rate analyzers for inflammation monitoring.</p>
             <ul class="product-features">
-              <li>Multi-parameter monitoring</li>
-              <li>Wireless connectivity</li>
-              <li>Central monitoring capability</li>
-              <li>Long battery life</li>
+              <li>Automated Westergren method</li>
+              <li>Fast results</li>
+              <li>Sample tracking</li>
+              <li>Quality assurance</li>
             </ul>
-            <a href="contact.html" class="btn">Request Quote</a>
+            <a href="contact.html?product=RAL ESR Analyzers" class="btn btn-small">Request Quote</a>
           </div>
-        </div>
-
-        <div class="product-card" data-category="lab">
-          <div class="product-image">
-            <i class="fas fa-vial"></i>
-          </div>
-          <div class="product-info">
-            <h3>Blood Analyzers</h3>
-            <p>Automated hematology and biochemistry analyzers for laboratory use</p>
+          <div class="product-card">
+            <h4>Coagulation Analyzers</h4>
+            <p>Specialized coagulation testing systems for hemostasis monitoring.</p>
             <ul class="product-features">
-              <li>High throughput capacity</li>
-              <li>Comprehensive test panels</li>
-              <li>Quality control systems</li>
-              <li>LIS connectivity</li>
+              <li>PT/INR testing</li>
+              <li>APTT monitoring</li>
+              <li>Multiple methods</li>
+              <li>Comprehensive panels</li>
             </ul>
-            <a href="contact.html" class="btn">Request Quote</a>
-          </div>
-        </div>
-
-        <div class="product-card" data-category="therapeutic">
-          <div class="product-image">
-            <i class="fas fa-syringe"></i>
-          </div>
-          <div class="product-info">
-            <h3>Infusion Pumps</h3>
-            <p>Precision infusion systems for accurate medication delivery</p>
-            <ul class="product-features">
-              <li>Multiple delivery modes</li>
-              <li>Drug library integration</li>
-              <li>Safety alarm systems</li>
-              <li>Battery operated</li>
-            </ul>
-            <a href="contact.html" class="btn">Request Quote</a>
+            <a href="contact.html?product=RAL Coagulation Analyzers" class="btn btn-small">Request Quote</a>
           </div>
         </div>
       </div>
@@ -655,7 +727,7 @@
           </div>
           <div class="card-content">
             <h3>Installation & Training</h3>
-            <p>Professional installation and comprehensive staff training for all equipment</p>
+            <p>Professional installation and comprehensive staff training for all equipment.</p>
           </div>
         </div>
         <div class="content-card">
@@ -664,7 +736,7 @@
           </div>
           <div class="card-content">
             <h3>Technical Support</h3>
-            <p>24/7 technical support and troubleshooting services for all products</p>
+            <p>24/7 technical support and troubleshooting services for all products.</p>
           </div>
         </div>
         <div class="content-card">
@@ -673,7 +745,7 @@
           </div>
           <div class="card-content">
             <h3>Preventive Maintenance</h3>
-            <p>Scheduled maintenance programs to ensure equipment reliability and longevity</p>
+            <p>Scheduled maintenance programs to ensure equipment reliability and longevity.</p>
           </div>
         </div>
       </div>
@@ -731,28 +803,13 @@
       }
     });
 
-    // Product filtering
-    document.addEventListener('DOMContentLoaded', function() {
-      const filterButtons = document.querySelectorAll('.filter-btn');
-      const productCards = document.querySelectorAll('.product-card');
-
-      filterButtons.forEach(button => {
-        button.addEventListener('click', function() {
-          // Remove active class from all buttons
-          filterButtons.forEach(btn => btn.classList.remove('active'));
-          // Add active class to clicked button
-          this.classList.add('active');
-
-          const filterValue = this.getAttribute('data-filter');
-
-          productCards.forEach(card => {
-            if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
-              card.style.display = 'block';
-            } else {
-              card.style.display = 'none';
-            }
-          });
-        });
+    // Product inquiry tracking
+    document.querySelectorAll('.btn').forEach(button => {
+      button.addEventListener('click', function(e) {
+        if (this.href.includes('contact.html')) {
+          const productName = this.textContent.includes('Quote') ? this.closest('.product-card').querySelector('h4').textContent : 'Product Inquiry';
+          console.log(`Quote request for: ${productName}`);
+        }
       });
     });
   </script>
