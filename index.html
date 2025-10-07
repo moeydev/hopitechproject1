@@ -263,29 +263,40 @@
     }
 
     .partner-logos {
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-      flex-wrap: wrap;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       gap: 30px;
       margin-top: 40px;
     }
 
     .partner-logo {
       background-color: white;
-      width: 150px;
-      height: 100px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      padding: 30px 20px;
       border-radius: 8px;
       box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
-      padding: 15px;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .partner-logo:hover {
+      transform: translateY(-5px);
     }
 
     .partner-logo i {
       font-size: 40px;
       color: var(--primary);
+      margin-bottom: 15px;
+    }
+
+    .partner-logo h3 {
+      font-size: 18px;
+      color: var(--primary);
+      margin-bottom: 10px;
+    }
+
+    .partner-logo p {
+      color: var(--text-light);
+      font-size: 14px;
     }
 
     /* Footer */
@@ -404,6 +415,17 @@
       .hero p {
         font-size: 16px;
       }
+
+      .partner-logos {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .partner-logos {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
@@ -461,17 +483,17 @@
           <div class="card-content">
             <h3>Diagnostic Equipment</h3>
             <p>State-of-the-art diagnostic tools and systems for accurate and timely medical assessments.</p>
-            <a href="products.html" class="btn">Learn More</a>
+            <a href="products.html#diagnostic" class="btn">Learn More</a>
           </div>
         </div>
         <div class="content-card">
           <div class="card-icon">
-            <i class="fas fa-procedures"></i>
+            <i class="fas fa-vial"></i>
           </div>
           <div class="card-content">
-            <h3>Therapeutic Solutions</h3>
-            <p>Advanced therapeutic equipment designed to enhance patient treatment and recovery.</p>
-            <a href="products.html" class="btn">Learn More</a>
+            <h3>Laboratory Solutions</h3>
+            <p>Advanced laboratory equipment and reagents for precise clinical testing and analysis.</p>
+            <a href="products.html#laboratory" class="btn">Learn More</a>
           </div>
         </div>
         <div class="content-card">
@@ -479,9 +501,9 @@
             <i class="fas fa-handshake"></i>
           </div>
           <div class="card-content">
-            <h3>Partnership Programs</h3>
-            <p>Collaborative relationships with healthcare institutions to deliver comprehensive solutions.</p>
-            <a href="partners.html" class="btn">Learn More</a>
+            <h3>Technical Support</h3>
+            <p>Comprehensive installation, training, and maintenance services for all equipment.</p>
+            <a href="contact.html" class="btn">Contact Support</a>
           </div>
         </div>
       </div>
@@ -491,22 +513,33 @@
   <section class="partners">
     <div class="container">
       <div class="section-title">
-        <h2>Our Partners</h2>
-        <p>We collaborate with leading global companies to bring you the best in medical technology</p>
+        <h2>Our Trusted Partners</h2>
+        <p>Collaborating with world-leading medical technology manufacturers</p>
       </div>
       <div class="partner-logos">
         <div class="partner-logo">
           <i class="fas fa-flask"></i>
+          <h3>NEO Medica</h3>
+          <p>Hematology & Urine Analysis Systems</p>
+        </div>
+        <div class="partner-logo">
+          <i class="fas fa-tint"></i>
+          <h3>Rapid Labs</h3>
+          <p>Blood Testing & Serology Solutions</p>
+        </div>
+        <div class="partner-logo">
+          <i class="fas fa-vial"></i>
+          <h3>FAR Diagnostics</h3>
+          <p>Biochemistry & Laboratory Reagents</p>
         </div>
         <div class="partner-logo">
           <i class="fas fa-heartbeat"></i>
+          <h3>RAL Spain</h3>
+          <p>Specialized Diagnostic Analyzers</p>
         </div>
-        <div class="partner-logo">
-          <i class="fas fa-stethoscope"></i>
-        </div>
-        <div class="partner-logo">
-          <i class="fas fa-prescription-bottle"></i>
-        </div>
+      </div>
+      <div style="text-align: center; margin-top: 40px;">
+        <a href="partners.html" class="btn">View All Partners</a>
       </div>
     </div>
   </section>
