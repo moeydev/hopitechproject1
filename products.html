@@ -51,7 +51,12 @@
       align-items: center;
       justify-content: space-between;
     }
-
+    .logo-image {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    border-radius: 8px;
+}
     .logo-container {
       display: flex;
       align-items: center;
@@ -494,16 +499,16 @@
 <body>
   <header>
     <div class="container header-container">
-      <div class="logo-container">
-        <div class="site-logo">
-          <i class="fas fa-hospital-alt"></i>
-        </div>
-        <div class="header-text">
-          <h1>Hospitech Associates Ltd.</h1>
-          <p class="subtitle">Determined by Quality for Everyone</p>
-        </div>
-      </div>
-    </div>
+    <div class="logo">
+   <img src="logo.png" alt="Hospitech Associates Ltd." class="logo-image">
+    <div class="logo-text">
+        <h1>Hospitech Associates Ltd.</h1>
+        <div class="subtitle">Determined by Quality for Everyone</div>
+ </div>
+</div>
+  </div>
+
+
   </header>
 
   <nav>
