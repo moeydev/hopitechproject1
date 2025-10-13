@@ -77,6 +77,12 @@ header {
   font-weight: 300;
 }
 
+.logo-image {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    border-radius: 8px;
+}
 /* Navigation Styles */
 nav {
   background-color: white;
