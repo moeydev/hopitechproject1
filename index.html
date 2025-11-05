@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hospitech Associates Ltd. - Determined by Quality for Everyone </title>
+    <title>Hospitech Associates Ltd. - Determined by Quality for Everyone</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="icon" type="image/png" href="favicon-32x32.png">
     <style>
@@ -41,58 +41,50 @@
         }
 
         /* Header Styles */
-         header {
-      background: linear-gradient(135deg, var(--primary), var(--secondary));
-      color: white;
-      padding: 20px 0;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    }
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 15px 0;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: var(--transition);
+        }
 
-    .header-container {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
+        .header-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
 
-    .logo-container {
-      display: flex;
-      align-items: center;
-    }
-  
-    .logo-image {
-    width: 50px;
-    height: 50px;
-    object-fit: contain;
-    border-radius: 8px;
-}
-    .site-logo {
-      width: 80px;
-      height: 80px;
-      border-radius: 8px;
-      background-color: white;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-right: 15px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    }
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
 
-    .site-logo i {
-      font-size: 40px;
-      color: var(--primary);
-    }
+        .logo-image {
+            width: 50px;
+            height: 50px;
+            object-fit: contain;
+            border-radius: 8px;
+        }
 
-    .header-text h1 {
-      font-size: 28px;
-      margin-bottom: 5px;
-      font-weight: 700;
-    }
+        .header-text h1 {
+            font-size: 24px;
+            margin-bottom: 2px;
+            font-weight: 700;
+            color: white;
+        }
 
-    .subtitle {
-      font-size: 16px;
-      opacity: 0.9;
-      font-weight: 300;
-    }
+        .subtitle {
+            font-size: 12px;
+            opacity: 0.9;
+            font-weight: 300;
+            color: rgba(255, 255, 255, 0.9);
+        }
 
         /* Navigation */
         .nav-menu {
@@ -103,7 +95,7 @@
 
         .nav-menu a {
             text-decoration: none;
-            color: var(--text);
+            color: rgba(255, 255, 255, 0.9);
             font-weight: 500;
             font-size: 16px;
             transition: var(--transition);
@@ -112,7 +104,7 @@
 
         .nav-menu a:hover,
         .nav-menu a.active {
-            color: var(--primary);
+            color: white;
         }
 
         .nav-menu a.active::after {
@@ -122,13 +114,14 @@
             left: 0;
             width: 100%;
             height: 2px;
-            background: var(--primary);
+            background: white;
         }
 
         .mobile-toggle {
             display: none;
             font-size: 24px;
             cursor: pointer;
+            color: white;
         }
 
         /* Hero Section */
@@ -142,6 +135,7 @@
             text-align: center;
             position: relative;
             overflow: hidden;
+            margin-top: 80px;
         }
 
         .hero::before {
@@ -500,6 +494,15 @@
                 left: 0;
             }
 
+            .nav-menu a {
+                color: var(--text);
+            }
+
+            .nav-menu a:hover,
+            .nav-menu a.active {
+                color: var(--primary);
+            }
+
             .hero h1 {
                 font-size: 2.5rem;
             }
@@ -532,6 +535,15 @@
                 margin-left: 0;
                 margin-top: 15px;
             }
+
+            .header-text h1 {
+                font-size: 20px;
+            }
+
+            .logo-image {
+                width: 40px;
+                height: 40px;
+            }
         }
     </style>
 </head>
@@ -539,13 +551,12 @@
     <!-- Header -->
     <header>
         <div class="container header-container">
-    <div class="logo">
-   <img src="logo.png" alt="Hospitech Associates Ltd." class="logo-image">
-    <div class="logo-text">
-        <h1>Hospitech Associates Ltd.</h1>
-        <div class="subtitle">Determined by Quality for Everyone</div>
-    </div>
-</div>
+            <div class="logo-container">
+                <img src="logo.png" alt="Hospitech Associates Ltd." class="logo-image">
+                <div class="header-text">
+                    <h1>Hospitech Associates Ltd.</h1>
+                    <div class="subtitle">Determined by Quality for Everyone</div>
+                </div>
             </div>
             
             <nav>
@@ -627,32 +638,32 @@
                         <i class="fas fa-flask"></i>
                     </div>
                     <h3>Hematology & Urine Analysis Systems</h3>
-                    <p>Imported from Renowned companies in <strong> Serbia (Europe) </strong> </p>
-                    <a href="https://moeydev.github.io/hopitechproject1/contact.html" target="_blank" class="partner-link">Learn More →</a>
+                    <p>Imported from Renowned companies in <strong> Serbia (Europe) 🇷🇸</strong></p>
+                    <a href="products.html" class="partner-link">Learn More →</a>
                 </div>
                 <div class="partner-card fade-in">
                     <div class="partner-logo">
                         <i class="fas fa-tint"></i>
                     </div>
                     <h3>Blood Testing & Diagnostic Solutions</h3>
-                    <p>Imported from <strong> United Kingdom </strong></p>
-                    <a href="https://moeydev.github.io/hopitechproject1/contact.html" target="_blank" class="partner-link">Learn More →</a>
+                    <p>Imported from <strong> United Kingdom 🇬🇧</strong></p>
+                    <a href="products.html" class="partner-link">Learn More →</a>
                 </div>
                 <div class="partner-card fade-in">
                     <div class="partner-logo">
                         <i class="fas fa-vial"></i>
                     </div>
                     <h3>Laboratory Reagents & Analyzers</h3>
-                    <p>Imported from <strong>ITALY</strong></p>
-                    <a href="https://moeydev.github.io/hopitechproject1/contact.html" target="_blank" class="partner-link">Learn More →</a>
+                    <p>Imported from <strong>ITALY 🇮🇹</strong></p>
+                    <a href="products.html" class="partner-link">Learn More →</a>
                 </div>
                 <div class="partner-card fade-in">
                     <div class="partner-logo">
                         <i class="fas fa-microscope"></i>
                     </div>
                     <h3>Biochemistry,ESR & Coagulation Analyzer</h3>
-                    <p>Specially Imported from <strong>Spain</strong></p>
-                    <a href="https://moeydev.github.io/hopitechproject1/contact.html" target="_blank" class="partner-link">Learn More →</a>
+                    <p>Specially Imported from <strong>Spain 🇪🇸</strong></p>
+                    <a href="products.html" class="partner-link">Learn More →</a>
                 </div>
             </div>
         </div>
@@ -696,7 +707,7 @@
                 </div>
                 <div class="footer-section">
                     <h3>Contact Info</h3>
-                    <p><i class="fas fa-map-marker-alt"></i> Baitush Sharaf Complex, 3rd Floor, 149/A Airport Road, Farmgate, Tejgaon, Dhak-1215, Bangladesh </p>
+                    <p><i class="fas fa-map-marker-alt"></i> Baitush Sharaf Complex, 3rd Floor, 149/A Airport Road, Farmgate, Tejgaon, Dhak-1215, Bangladesh</p>
                     <p><i class="fas fa-phone"></i> +880 18331 64639</p>
                     <p><i class="fas fa-envelope"></i> hospitechbd@gmail.com</p>
                 </div>
@@ -732,18 +743,6 @@
 
         fadeElements.forEach(element => {
             observer.observe(element);
-        });
-
-        // Header Scroll Effect
-        window.addEventListener('scroll', () => {
-            const header = document.querySelector('header');
-            if (window.scrollY > 100) {
-                header.style.background = 'rgba(255, 255, 255, 0.95)';
-                header.style.backdropFilter = 'blur(10px)';
-            } else {
-                header.style.background = 'var(--white)';
-                header.style.backdropFilter = 'none';
-            }
         });
 
         // Smooth scrolling for anchor links
