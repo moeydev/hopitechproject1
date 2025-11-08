@@ -1,824 +1,928 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact - Hospitech Associates Ltd.</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="icon" type="image/png" href="favicon-32x32.png">
-  <style>
-    /* Base Styles */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
-
-    :root {
-      --primary: #1a5276;
-      --secondary: #3498db;
-      --accent: #e74c3c;
-      --light: #f5f7fa;
-      --dark: #2c3e50;
-      --text: #333333;
-      --text-light: #666666;
-    }
-
-    body {
-      background-color: #f9f9f9;
-      color: var(--text);
-      line-height: 1.6;
-    }
-
-    .container {
-      width: 100%;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-
-    /* Header Styles */
-    header {
-      background: linear-gradient(135deg, var(--primary), var(--secondary));
-      color: white;
-      padding: 20px 0;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    }
-
-    .header-container {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    
-.logo-image {
-    width: 50px;
-    height: 50px;
-    object-fit: contain;
-    border-radius: 8px;
-}
-
-    .logo-container {
-      display: flex;
-      align-items: center;
-    }
-
-    .site-logo {
-      width: 80px;
-      height: 80px;
-      border-radius: 8px;
-      background-color: white;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-right: 15px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    }
-
-    .site-logo i {
-      font-size: 40px;
-      color: var(--primary);
-    }
-
-    .header-text h1 {
-      font-size: 28px;
-      margin-bottom: 5px;
-      font-weight: 700;
-    }
-
-    .subtitle {
-      font-size: 16px;
-      opacity: 0.9;
-      font-weight: 300;
-    }
-
-    /* Navigation Styles */
-    nav {
-      background-color: white;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-
-    .nav-container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 0 20px;
-    }
-
-    .nav-links {
-      display: flex;
-    }
-
-    .nav-links a {
-      color: var(--dark);
-      text-decoration: none;
-      padding: 18px 20px;
-      font-weight: 500;
-      transition: all 0.3s ease;
-      position: relative;
-    }
-
-    .nav-links a:hover {
-      color: var(--primary);
-    }
-
-    .nav-links a.active {
-      color: var(--primary);
-    }
-
-    .nav-links a.active::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 3px;
-      background-color: var(--primary);
-    }
-
-    .menu-toggle {
-      display: none;
-      font-size: 24px;
-      cursor: pointer;
-    }
-
-    /* Page Header */
-    .page-header {
-      background: linear-gradient(rgba(26, 82, 118, 0.9), rgba(52, 152, 219, 0.9)), url('https://images.unsplash.com/photo-1565688534245-05d6b5be184a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
-      background-size: cover;
-      background-position: center;
-      color: white;
-      padding: 80px 0;
-      text-align: center;
-    }
-
-    .page-header h1 {
-      font-size: 42px;
-      margin-bottom: 20px;
-      font-weight: 700;
-    }
-
-    .page-header p {
-      font-size: 20px;
-      max-width: 700px;
-      margin: 0 auto;
-      opacity: 0.9;
-    }
-
-    /* Content Sections */
-    section {
-      padding: 60px 0;
-    }
-
-    .section-title {
-      text-align: center;
-      margin-bottom: 40px;
-    }
-
-    .section-title h2 {
-      font-size: 32px;
-      color: var(--primary);
-      margin-bottom: 15px;
-      position: relative;
-      display: inline-block;
-    }
-
-    .section-title h2::after {
-      content: '';
-      position: absolute;
-      bottom: -10px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 80px;
-      height: 3px;
-      background-color: var(--accent);
-    }
-
-    .section-title p {
-      color: var(--text-light);
-      max-width: 700px;
-      margin: 0 auto;
-    }
-
-    .content-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 30px;
-      margin-top: 40px;
-    }
-
-    .content-card {
-      background-color: white;
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-      transition: transform 0.3s ease;
-    }
-
-    .content-card:hover {
-      transform: translateY(-5px);
-    }
-
-    .card-icon {
-      background-color: var(--primary);
-      color: white;
-      padding: 20px;
-      text-align: center;
-      font-size: 40px;
-    }
-
-    .card-content {
-      padding: 25px;
-    }
-
-    .card-content h3 {
-      font-size: 22px;
-      margin-bottom: 15px;
-      color: var(--primary);
-    }
-
-    .card-content p {
-      color: var(--text-light);
-      margin-bottom: 15px;
-    }
-
-    .btn {
-      display: inline-block;
-      background-color: var(--accent);
-      color: white;
-      padding: 12px 30px;
-      border-radius: 30px;
-      text-decoration: none;
-      font-weight: 600;
-      transition: all 0.3s ease;
-      border: none;
-      cursor: pointer;
-    }
-
-    .btn:hover {
-      background-color: #c0392b;
-      transform: translateY(-2px);
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    }
-
-    /* Contact Section */
-    .contact-section {
-      background-color: var(--light);
-    }
-
-    .contact-container {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 50px;
-    }
-
-    .contact-info h3 {
-      font-size: 24px;
-      color: var(--primary);
-      margin-bottom: 20px;
-    }
-
-    .contact-details {
-      margin-bottom: 30px;
-    }
-
-    .contact-item {
-      display: flex;
-      align-items: flex-start;
-      margin-bottom: 20px;
-    }
-
-    .contact-icon {
-      background-color: var(--primary);
-      color: white;
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-right: 15px;
-      flex-shrink: 0;
-    }
-
-    .contact-text h4 {
-      font-size: 18px;
-      color: var(--primary);
-      margin-bottom: 5px;
-    }
-
-    .contact-text p {
-      color: var(--text-light);
-    }
-
-    .business-hours {
-      background-color: white;
-      padding: 25px;
-      border-radius: 8px;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-    }
-
-    .business-hours h4 {
-      font-size: 20px;
-      color: var(--primary);
-      margin-bottom: 15px;
-    }
-
-    .hours-list {
-      list-style: none;
-    }
-
-    .hours-list li {
-      display: flex;
-      justify-content: space-between;
-      padding: 8px 0;
-      border-bottom: 1px solid #eee;
-    }
-
-    .hours-list li:last-child {
-      border-bottom: none;
-    }
-
-    .day {
-      color: var(--text);
-      font-weight: 500;
-    }
-
-    .time {
-      color: var(--text-light);
-    }
-
-    /* Contact Form */
-    .contact-form {
-      background-color: white;
-      padding: 40px;
-      border-radius: 8px;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-    }
-
-    .form-group {
-      margin-bottom: 20px;
-    }
-
-    .form-group label {
-      display: block;
-      margin-bottom: 8px;
-      color: var(--primary);
-      font-weight: 500;
-    }
-
-    .form-control {
-      width: 100%;
-      padding: 12px 15px;
-      border: 1px solid #ddd;
-      border-radius: 4px;
-      font-size: 16px;
-      transition: border-color 0.3s ease;
-    }
-
-    .form-control:focus {
-      outline: none;
-      border-color: var(--primary);
-    }
-
-    textarea.form-control {
-      resize: vertical;
-      min-height: 120px;
-    }
-
-    /* Map Section */
-    .map-section {
-      padding: 0;
-    }
-
-    .map-container {
-      height: 400px;
-      background-color: #e9ecef;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .map-placeholder {
-      text-align: center;
-      color: var(--text-light);
-    }
-
-    .map-placeholder i {
-      font-size: 60px;
-      margin-bottom: 15px;
-      color: var(--primary);
-    }
-
-    /* Footer */
-    footer {
-      background-color: var(--dark);
-      color: white;
-      padding: 40px 0 20px;
-    }
-
-    .footer-content {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 30px;
-      margin-bottom: 30px;
-    }
-
-    .footer-section h3 {
-      font-size: 20px;
-      margin-bottom: 20px;
-      position: relative;
-      padding-bottom: 10px;
-    }
-
-    .footer-section h3::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 50px;
-      height: 2px;
-      background-color: var(--accent);
-    }
-
-    .footer-section p, .footer-section a {
-      color: #bbb;
-      margin-bottom: 10px;
-      display: block;
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
-
-    .footer-section a:hover {
-      color: white;
-    }
-
-    .social-links {
-      display: flex;
-      gap: 15px;
-      margin-top: 20px;
-    }
-
-    .social-links a {
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-      background-color: rgba(255, 255, 255, 0.1);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: all 0.3s ease;
-    }
-
-    .social-links a:hover {
-      background-color: var(--accent);
-      transform: translateY(-3px);
-    }
-
-    .footer-bottom {
-      text-align: center;
-      padding-top: 20px;
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
-      color: #bbb;
-      font-size: 14px;
-    }
-
-    /* Responsive Design */
-    @media (max-width: 768px) {
-      .header-container {
-        flex-direction: column;
-        text-align: center;
-      }
-
-      .logo-container {
-        margin-bottom: 15px;
-        justify-content: center;
-      }
-
-      .menu-toggle {
-        display: block;
-      }
-
-      .nav-links {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        background-color: white;
-        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-      }
-
-      .nav-links.active {
-        display: flex;
-      }
-
-      .nav-links a {
-        padding: 15px 20px;
-        border-bottom: 1px solid #eee;
-      }
-
-      .page-header h1 {
-        font-size: 32px;
-      }
-
-      .page-header p {
-        font-size: 18px;
-      }
-
-      .contact-container {
-        grid-template-columns: 1fr;
-        gap: 30px;
-      }
-
-      .contact-form {
-        padding: 25px;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Hospitech Associates Ltd.</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="favicon-32x32.png">
+    <style>
+        /* Base Styles */
+        :root {
+            --primary: #1a5276;
+            --primary-dark: #154360;
+            --secondary: #2e86c1;
+            --accent: #e74c3c;
+            --light: #f8f9fa;
+            --dark: #2c3e50;
+            --text: #333333;
+            --text-light: #6c757d;
+            --white: #ffffff;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 15px 0;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        .header-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-image {
+            width: 50px;
+            height: 50px;
+            object-fit: contain;
+            border-radius: 8px;
+        }
+
+        .header-text h1 {
+            font-size: 24px;
+            margin-bottom: 2px;
+            font-weight: 700;
+            color: white;
+        }
+
+        .subtitle {
+            font-size: 12px;
+            opacity: 0.9;
+            font-weight: 300;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        /* Navigation */
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 500;
+            font-size: 16px;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-menu a:hover,
+        .nav-menu a.active {
+            color: white;
+        }
+
+        .nav-menu a.active::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: white;
+        }
+
+        .mobile-toggle {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: white;
+        }
+
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(rgba(26, 82, 118, 0.9), rgba(52, 152, 219, 0.9)), url('https://images.unsplash.com/photo-1565688534245-05d6b5be184a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+            padding: 120px 0 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            margin-top: 80px;
+        }
+
+        .page-header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .page-header p {
+            font-size: 1.25rem;
+            max-width: 700px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            padding: 80px 0;
+            background: var(--white);
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: start;
+        }
+
+        .contact-info h3 {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .contact-info > p {
+            color: var(--text-light);
+            margin-bottom: 40px;
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+
+        .contact-details {
+            margin-bottom: 40px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: var(--light);
+            border-radius: 12px;
+            transition: var(--transition);
+        }
+
+        .contact-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            color: var(--white);
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+
+        .contact-text h4 {
+            font-size: 1.25rem;
+            color: var(--primary);
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .contact-text p {
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        .business-hours {
+            background: var(--light);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .business-hours h4 {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .hours-list {
+            list-style: none;
+        }
+
+        .hours-list li {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            color: var(--text);
+        }
+
+        .hours-list li:last-child {
+            border-bottom: none;
+        }
+
+        .day {
+            font-weight: 500;
+            color: var(--primary);
+        }
+
+        .time {
+            color: var(--text-light);
+        }
+
+        /* Contact Form */
+        .contact-form {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .contact-form h3 {
+            font-size: 1.75rem;
+            color: var(--primary);
+            margin-bottom: 30px;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--primary);
+            font-weight: 500;
+            font-size: 1rem;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 15px 20px;
+            border: 2px solid #e9ecef;
+            border-radius: 10px;
+            font-size: 16px;
+            transition: var(--transition);
+            background: var(--light);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+            background: var(--white);
+            box-shadow: 0 0 0 3px rgba(26, 82, 118, 0.1);
+        }
+
+        textarea.form-control {
+            resize: vertical;
+            min-height: 140px;
+            font-family: inherit;
+        }
+
+        select.form-control {
+            cursor: pointer;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 15px 35px;
+            background: var(--accent);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 16px;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            justify-content: center;
+        }
+
+        .btn:hover {
+            background: #c0392b;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(231, 76, 60, 0.3);
+        }
+
+        /* Departments Section */
+        .departments {
+            padding: 80px 0;
+            background: var(--light);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        .section-title p {
+            font-size: 1.125rem;
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .content-card {
+            background: var(--white);
+            padding: 40px 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            text-align: center;
+            transition: var(--transition);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .content-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .card-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            color: var(--white);
+            font-size: 32px;
+        }
+
+        .content-card h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+
+        .content-card p {
+            color: var(--text-light);
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        .content-card strong {
+            color: var(--primary);
+        }
+
+        /* Map Section */
+        .map-section {
+            padding: 0;
+        }
+
+        .map-container {
+            height: 400px;
+            background: var(--light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .map-placeholder {
+            text-align: center;
+            color: var(--text-light);
+            padding: 40px;
+        }
+
+        .map-placeholder i {
+            font-size: 60px;
+            margin-bottom: 20px;
+            color: var(--primary);
+            opacity: 0.7;
+        }
+
+        .map-placeholder h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: var(--white);
+            padding: 60px 0 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-section h3 {
+            font-size: 1.25rem;
+            margin-bottom: 20px;
+            color: var(--white);
+        }
+
+        .footer-section p {
+            color: #bbb;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: #bbb;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--white);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background: var(--accent);
+            transform: translateY(-2px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #bbb;
+            font-size: 0.9rem;
+        }
+
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: var(--transition);
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .mobile-toggle {
+                display: block;
+            }
+
+            .nav-menu {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                background: var(--white);
+                flex-direction: column;
+                align-items: center;
+                padding: 40px 0;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+                transition: var(--transition);
+            }
+
+            .nav-menu.active {
+                left: 0;
+            }
+
+            .nav-menu a {
+                color: var(--text);
+            }
+
+            .nav-menu a:hover,
+            .nav-menu a.active {
+                color: var(--primary);
+            }
+
+            .page-header h1 {
+                font-size: 2.5rem;
+            }
+
+            .page-header p {
+                font-size: 1.1rem;
+            }
+
+            .contact-container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .contact-form {
+                padding: 30px;
+            }
+
+            .section-title h2 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .page-header h1 {
+                font-size: 2rem;
+            }
+
+            .header-text h1 {
+                font-size: 20px;
+            }
+
+            .logo-image {
+                width: 40px;
+                height: 40px;
+            }
+
+            .contact-item {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .contact-icon {
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
-  <header>
-   <div class="container header-container">
-    <div class="logo">
-   <img src="logo.png" alt="Hospitech Associates Ltd." class="logo-image">
-    <div class="logo-text">
-        <h1>Hospitech Associates Ltd.</h1>
-        <div class="subtitle">Determined by Quality for Everyone</div>
- </div>
-</div>
-  </div>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo-container">
+                <img src="logo.png" alt="Hospitech Associates Ltd." class="logo-image">
+                <div class="header-text">
+                    <h1>Hospitech Associates Ltd.</h1>
+                    <div class="subtitle">Determined by Quality for Everyone</div>
+                </div>
+            </div>
+            
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About us</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="partners.html">Partners</a></li>
+                    <li><a href="contact.html" class="active">Contact</a></li>
+                </ul>
+                <div class="mobile-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
 
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Contact Us</h1>
+            <p>Get in touch with our team for inquiries, support, or partnership opportunities</p>
+        </div>
+    </section>
 
-  </header>
-
-  <nav>
-    <div class="container nav-container">
-      <span class="menu-toggle" id="menuToggle">☰</span>
-      <div class="nav-links" id="navLinks">
-        <a href="index.html">Home</a>
-        <a href="about.html">About Us</a>
-        <a href="products.html">Products</a>
-        <a href="partners.html">Partners</a>
-        <a href="contact.html" class="active">Contact</a>
-      </div>
-    </div>
-  </nav>
-
-  <section class="page-header">
-    <div class="container">
-      <h1>Contact Us</h1>
-      <p>Get in touch with our team for inquiries, support, or partnership opportunities</p>
-    </div>
-  </section>
-
-<section class="contact-section">
-    <div class="container">
-        <div class="contact-container">
-            <div class="contact-info">
-                <h3>Get In Touch</h3>
-                <p>We're here to answer any questions you may have about our products and services. Reach out to us and we'll respond as soon as we can.</p>
-                
-                <div class="contact-details">
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-map-marker-alt"></i>
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Get In Touch</h3>
+                    <p>We're here to answer any questions you may have about our products and services. Reach out to us and we'll respond as soon as we can.</p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item fade-in">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Our Location</h4>
+                                <p>Baitush Sharaf Complex, 3rd Floor<br>149/A Airport Road, Farmgate<br>Tejgaon, Dhaka-1215, Bangladesh</p>
+                            </div>
                         </div>
-                        <div class="contact-text">
-                            <h4>Our Location</h4>
-                            <p>Baitush Sharaf Complex, 149/A Airport Road,Farmgate, Tejgaon, Dhaka 1215<br>Bangladesh</p>
+                        
+                        <div class="contact-item fade-in">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Phone Number</h4>
+                                <p>+880 18 3316 4639<br>+880 18 3316 4639</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item fade-in">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Email Address</h4>
+                                <p>hospitechbd@gmail.com<br>sales@hospitech.com</p>
+                            </div>
                         </div>
                     </div>
-                    
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-phone"></i>
-                        </div>
-                        <div class="contact-text">
-                            <h4>Phone Number</h4>
-                            <p>+880 18331 64639<br>+880 17778 006985</p>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <div class="contact-text">
-                            <h4>Email Address</h4>
-                            <p>hospitechbd@gmail.com<br>sales@hospitech.com</p>
-                        </div>
+
+                    <div class="business-hours fade-in">
+                        <h4>Business Hours</h4>
+                        <ul class="hours-list">
+                            <li>
+                                <span class="day">Monday - Friday</span>
+                                <span class="time">9:00 AM - 6:00 PM</span>
+                            </li>
+                            <li>
+                                <span class="day">Saturday</span>
+                                <span class="time">9:00 AM - 2:00 PM</span>
+                            </li>
+                            <li>
+                                <span class="day">Sunday</span>
+                                <span class="time">Closed</span>
+                            </li>
+                            <li>
+                                <span class="day">Emergency Support</span>
+                                <span class="time">24/7 Available</span>
+                            </li>
+                        </ul>
                     </div>
                 </div>
 
-                <div class="business-hours">
-                    <h4>Business Hours</h4>
-                    <ul class="hours-list">
-                        <li>
-                            <span class="day">Monday - Friday</span>
-                            <span class="time">9:00 AM - 6:00 PM</span>
-                        </li>
-                        <li>
-                            <span class="day">Saturday</span>
-                            <span class="time">9:00 AM - 2:00 PM</span>
-                        </li>
-                        <li>
-                            <span class="day">Sunday</span>
-                            <span class="time">Closed</span>
-                        </li>
-                        <li>
-                            <span class="day">Emergency Support</span>
-                            <span class="time">24/7 Available</span>
-                        </li>
+                <div class="contact-form fade-in">
+                    <h3>Send Us a Message</h3>
+                    <form id="contactForm" onsubmit="sendEmail(this); return false;">
+                        <div class="form-group">
+                            <label for="name">Full Name *</label>
+                            <input type="text" id="name" name="name" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" class="form-control">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="company">Company/Organization</label>
+                            <input type="text" id="company" name="company" class="form-control">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="inquiry">Type of Inquiry</label>
+                            <select id="inquiry" name="inquiry" class="form-control">
+                                <option value="">Select an option</option>
+                                <option value="product-inquiry">Product Information</option>
+                                <option value="quote-request">Quote Request</option>
+                                <option value="technical-support">Technical Support</option>
+                                <option value="partnership">Partnership Opportunity</option>
+                                <option value="general">General Inquiry</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">Subject *</label>
+                            <input type="text" id="subject" name="subject" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Message *</label>
+                            <textarea id="message" name="message" class="form-control" rows="5" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn">
+                            <i class="fas fa-paper-plane"></i>
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Departments Section -->
+    <section class="departments">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contact Our Departments</h2>
+                <p>Reach out to the appropriate team for specific inquiries</p>
+            </div>
+            <div class="content-grid">
+                <div class="content-card fade-in">
+                    <div class="card-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <h3>Sales Department</h3>
+                    <p>For product inquiries, pricing, and purchase information</p>
+                    <p><strong>Email:</strong> hospitechbd@gmail.com</p>
+                    <p><strong>Phone:</strong> +880 18 3316 4639</p>
+                </div>
+                <div class="content-card fade-in">
+                    <div class="card-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>Technical Support</h3>
+                    <p>For equipment troubleshooting and technical assistance</p>
+                    <p><strong>Email:</strong> hospitechbd@gmail.com</p>
+                    <p><strong>Phone:</strong> +880 18 3316 4639</p>
+                </div>
+                <div class="content-card fade-in">
+                    <div class="card-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>Partnerships</h3>
+                    <p>For collaboration and partnership opportunities</p>
+                    <p><strong>Email:</strong> hospitechbd@gmail.com</p>
+                    <p><strong>Phone:</strong> +880 18 3316 4639</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section">
+        <div class="map-container">
+            <div class="map-placeholder">
+                <i class="fas fa-map-marked-alt"></i>
+                <h3>Our Location</h3>
+                <p>Interactive map would be displayed here</p>
+                <p>Baitush Sharaf Complex, 149/A Airport Road, Farmgate, Tejgaon, Dhaka-1215, Bangladesh</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Hospitech Associates Ltd.</h3>
+                    <p>Determined by Quality for Everyone</p>
+                    <p>Providing advanced medical solutions since 2012.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="partners.html">Partners</a></li>
+                        <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Baitush Sharaf Complex, 149/A Airport Road, Farmgate, Tejgaon, Dhaka-1215, Bangladesh</p>
+                    <p><i class="fas fa-phone"></i> +880 18 3316 4639</p>
+                    <p><i class="fas fa-envelope"></i> hospitechbd@gmail.com</p>
+                </div>
             </div>
-
-            <div class="contact-form">
-                <h3>Send Us a Message</h3>
-                <form id="contactForm" onsubmit="sendEmail(this); return false;">
-                    <div class="form-group">
-                        <label for="name">Full Name *</label>
-                        <input type="text" id="name" name="name" class="form-control" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="email">Email Address *</label>
-                        <input type="email" id="email" name="email" class="form-control" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="phone">Phone Number</label>
-                        <input type="tel" id="phone" name="phone" class="form-control">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="company">Company/Organization</label>
-                        <input type="text" id="company" name="company" class="form-control">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="inquiry">Type of Inquiry</label>
-                        <select id="inquiry" name="inquiry" class="form-control">
-                            <option value="">Select an option</option>
-                            <option value="product-inquiry">Product Information</option>
-                            <option value="quote-request">Quote Request</option>
-                            <option value="technical-support">Technical Support</option>
-                            <option value="partnership">Partnership Opportunity</option>
-                            <option value="general">General Inquiry</option>
-                        </select>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="subject">Subject *</label>
-                        <input type="text" id="subject" name="subject" class="form-control" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="message">Message *</label>
-                        <textarea id="message" name="message" class="form-control" rows="5" required></textarea>
-                    </div>
-                    
-                    <button type="submit" class="btn">
-                        <i class="fas fa-paper-plane"></i>
-                        Send Message
-                    </button>
-                </form>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Hospitech Associates Ltd. All rights reserved.</p>
             </div>
         </div>
-    </div>
-</section>
+    </footer>
 
-  <section class="departments">
-    <div class="container">
-      <div class="section-title">
-        <h2>Contact Our Departments</h2>
-        <p>Reach out to the appropriate team for specific inquiries</p>
-      </div>
-      <div class="content-grid">
-        <div class="content-card">
-          <div class="card-icon">
-            <i class="fas fa-shopping-cart"></i>
-          </div>
-          <div class="card-content">
-            <h3>Sales Department</h3>
-            <p>For product inquiries, pricing, and purchase information</p>
-            <p><strong>Email:</strong> sales@hospitech.com</p>
-            <p><strong>Phone:</strong> +880 18 3316 4639</p>
-          </div>
-        </div>
-        <div class="content-card">
-          <div class="card-icon">
-            <i class="fas fa-headset"></i>
-          </div>
-          <div class="card-content">
-            <h3>Technical Support</h3>
-            <p>For equipment troubleshooting and technical assistance</p>
-            <p><strong>Email:</strong> support@hospitech.com</p>
-            <p><strong>Phone:</strong>  +880 18 3316 4639</p>
-          </div>
-        </div>
-        <div class="content-card">
-          <div class="card-icon">
-            <i class="fas fa-handshake"></i>
-          </div>
-          <div class="card-content">
-            <h3>Partnerships</h3>
-            <p>For collaboration and partnership opportunities</p>
-            <p><strong>Email:</strong> partnerships@hospitech.com</p>
-            <p><strong>Phone:</strong>  +880 18 3316 4639</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+    <script>
+        // Mobile Menu Toggle
+        const mobileToggle = document.querySelector('.mobile-toggle');
+        const navMenu = document.querySelector('.nav-menu');
 
-  <section class="map-section">
-    <div class="map-container">
-      <div class="map-placeholder">
-        <i class="fas fa-map-marked-alt"></i>
-        <h3>Our Location</h3>
-        <p>Interactive map would be displayed here</p>
-        <p>Baitush Sharaf Complex, 149/A Airport Road, Farmgate, Tejgaon, Dhaka-1215, Bangladesh</p>
-      </div>
-    </div>
-  </section>
+        mobileToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
 
-  <footer>
-    <div class="container">
-      <div class="footer-content">
-        <div class="footer-section">
-          <h3>Hospitech Associates Ltd.</h3>
-          <p>Determined by Quality for Everyone</p>
-          <p>Providing advanced medical solutions since 2012.</p>
-          <div class="social-links">
-            <a href="#"><i class="fab fa-facebook-f"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-linkedin-in"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-          </div>
-        </div>
-        <div class="footer-section">
-          <h3>Quick Links</h3>
-          <a href="index.html">Home</a>
-          <a href="about.html">About Us</a>
-          <a href="products.html">Products</a>
-          <a href="partners.html">Partners</a>
-          <a href="contact.html">Contact</a>
-        </div>
-        <div class="footer-section">
-          <h3>Contact Us</h3>
-          <p><i class="fas fa-map-marker-alt"></i> Baitush Sharaf Complex, 149/A Airport Road, Farmgate, Tejgaon, Dhaka-1215, Bangladesh</p>
-          <p><i class="fas fa-phone"></i> +880 18 3316 4639</p>
-          <p><i class="fas fa-envelope"></i> hospitechbd@gmail.com</p>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>&copy; 2025 Hospitech Associates Ltd. All rights reserved.</p>
-      </div>
-    </div>
-  </footer>
+        // Scroll Animations
+        const fadeElements = document.querySelectorAll('.fade-in');
 
-<script>
-    // Mobile menu toggle
-    document.getElementById('menuToggle').addEventListener('click', function() {
-        document.getElementById('navLinks').classList.toggle('active');
-    });
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        });
 
-    // Close menu when clicking outside
-    document.addEventListener('click', function(event) {
-        const navLinks = document.getElementById('navLinks');
-        const menuToggle = document.getElementById('menuToggle');
-        
-        if (!navLinks.contains(event.target) && !menuToggle.contains(event.target)) {
-            navLinks.classList.remove('active');
-        }
-    });
+        fadeElements.forEach(element => {
+            observer.observe(element);
+        });
 
-    // Contact form email function
-    function sendEmail(form) {
-        const name = form.name.value;
-        const email = form.email.value;
-        const phone = form.phone.value;
-        const company = form.company.value;
-        const inquiry = form.inquiry.value;
-        const subject = form.subject.value;
-        const message = form.message.value;
+        // Contact form email function
+        function sendEmail(form) {
+            const name = form.name.value;
+            const email = form.email.value;
+            const phone = form.phone.value;
+            const company = form.company.value;
+            const inquiry = form.inquiry.value;
+            const subject = form.subject.value;
+            const message = form.message.value;
 
-        // Create email body with all form data
-        const emailBody = `
+            // Get inquiry type text
+            const inquiryTypes = {
+                'product-inquiry': 'Product Information',
+                'quote-request': 'Quote Request',
+                'technical-support': 'Technical Support',
+                'partnership': 'Partnership Opportunity',
+                'general': 'General Inquiry'
+            };
+            const inquiryText = inquiryTypes[inquiry] || 'Not specified';
+
+            // Create email body with all form data
+            const emailBody = `
 New Contact Form Submission from Hospitech Website:
 
-Name: ${name}
-Email: ${email}
-Phone: ${phone}
-Company: ${company}
-Inquiry Type: ${inquiry || 'Not specified'}
+Contact Information:
+- Name: ${name}
+- Email: ${email}
+- Phone: ${phone || 'Not provided'}
+- Company: ${company || 'Not provided'}
+- Inquiry Type: ${inquiryText}
 
 Subject: ${subject}
 
@@ -827,33 +931,47 @@ ${message}
 
 ---
 This message was sent from the Hospitech Associates Ltd. contact form.
-        `.trim();
+            `.trim();
 
-        // Create mailto link
-        const mailtoLink = `mailto:hospitechbd@gmail.com?subject=Website Contact: ${encodeURIComponent(subject)}&body=${encodeURIComponent(emailBody)}`;
+            // Create mailto link
+            const mailtoLink = `mailto:hospitechbd@gmail.com?subject=Website Contact: ${encodeURIComponent(subject)}&body=${encodeURIComponent(emailBody)}`;
 
-        // Open email client
-        window.location.href = mailtoLink;
+            // Open email client
+            window.location.href = mailtoLink;
 
-        // Show success message
-        alert('Thank you for your message! Your email client will open with your message. Please click "Send" to complete your inquiry.');
-        
-        // Optional: Reset form after submission
-        form.reset();
-        
-        return false;
-    }
-
-    // Auto-fill subject based on URL parameters (for quote requests from products page)
-    document.addEventListener('DOMContentLoaded', function() {
-        const urlParams = new URLSearchParams(window.location.search);
-        const product = urlParams.get('product');
-        
-        if (product) {
-            document.getElementById('subject').value = `Quote Request - ${product}`;
-            document.getElementById('inquiry').value = 'quote-request';
+            // Show success message
+            alert('Thank you for your message! Your email client will open with your message. Please click "Send" to complete your inquiry.');
+            
+            // Optional: Reset form after submission
+            form.reset();
+            
+            return false;
         }
-    });
-</script>
+
+        // Auto-fill subject based on URL parameters (for quote requests from products page)
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const product = urlParams.get('product');
+            
+            if (product) {
+                document.getElementById('subject').value = `Quote Request - ${product}`;
+                document.getElementById('inquiry').value = 'quote-request';
+            }
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 </html>
